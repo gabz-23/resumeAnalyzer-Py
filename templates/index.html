@@ -1,0 +1,19 @@
+{% extends "layout.html" %} {% block body %} {%for curriculum in curriculums %}
+<p>
+    Archivo {{curriculum['archivo']}} - Materia {{ curriculum['materia'] }} - Probabilidad {{
+    curriculum['probabilidad'] }}
+</p>
+
+{% endfor %}
+<form method="POST" enctype="multipart/form-data" class="form-eval">
+    <div class="input-file">
+        <label for="file" class="custom-file-upload">Subir PDF/DOCX</label>
+        <input type="file" id="file" name="file" style="display: none" multiple />
+    </div>
+
+    <div class="center-btn">
+        <input type="submit" class="btn-submit" value="Evaluar" />
+    </div>
+</form>
+
+{% endblock %}
